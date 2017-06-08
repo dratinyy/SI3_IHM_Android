@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">To Be or To Have</string>
+    <string name="title_activity_choix_magasin">Choisir des Magasins</string>
+    <string name="title_activity_choix_produit">Choisir des Produits</string>
+    <string name="promotions">Promotions</string>
+    <string name="fidelite">Fidélité</string>
+    <string name="logo">Logo</string>
+    <string name="choisir_des_magasins">Choisir des magasins</string>
+    <string name="produit">Produit</string>
+    <string name="type_de_produit">Type de produit</string>
+</resources>
