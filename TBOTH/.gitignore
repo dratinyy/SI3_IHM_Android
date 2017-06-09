@@ -1,5 +1,12 @@
 *.iml
 .gradle
+gradle.properties
+gradlew
+/gradle/
+gradlew.bat
+settings.gradle
+build.gradle
+/app/proguard-rules.pro
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
