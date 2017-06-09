@@ -1,10 +1,12 @@
 package ihm.kauffmann.com.tboth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -27,7 +29,7 @@ public class ChoixProduitActivity extends AppCompatActivity {
 
         TextView toolbar_text = (TextView) findViewById(R.id.choix_toolbar_text);
         toolbar_text.setText("Choisir des produits");
-        toolbar_text.setTextSize(15);
+        toolbar_text.setTextSize(20);
 
         ImageButton favorite = (ImageButton) findViewById(R.id.choix_button_favorite);
         favorite.setBackgroundResource(R.drawable.ic_stars_black_24dp);
@@ -37,6 +39,12 @@ public class ChoixProduitActivity extends AppCompatActivity {
 
         ImageButton ok = (ImageButton) findViewById(R.id.choix_button_ok);
         ok.setBackgroundResource(R.drawable.ic_arrow_forward_black_24dp);
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openChoixMagasin();
+            }
+        });
 
         mRecyclerView = (RecyclerView) findViewById(R.id.choix_recyclerView);
         mLayoutManager = new GridLayoutManager(this, 3);
@@ -44,6 +52,11 @@ public class ChoixProduitActivity extends AppCompatActivity {
 
         mAdapter = new ProduitRecyclerAdapter(Produit.getData());
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void openChoixMagasin() {
+        Intent intent = new Intent(this, ChoixMagasinActivity.class);
+        startActivity(intent);
     }
 
 }

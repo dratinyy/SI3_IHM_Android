@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MagasinViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class MagasinViewHolder extends RecyclerView.ViewHolder {
 
     private LinearLayout background;
     private ImageView image;
@@ -21,7 +21,7 @@ public class MagasinViewHolder extends RecyclerView.ViewHolder implements View.O
         this.nom = nom;
         this.activeState = false;
 
-        itemView.setOnClickListener(this);
+        //itemView.setOnClickListener(this);
     }
 
     public ImageView getImage() {
@@ -30,16 +30,5 @@ public class MagasinViewHolder extends RecyclerView.ViewHolder implements View.O
 
     public TextView getNom() {
         return nom;
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        if (activeState) {
-            background.setBackgroundColor(0);
-        } else {
-            background.setBackgroundColor(0x4000FF00);
-        }
-        activeState = !activeState;
     }
 }

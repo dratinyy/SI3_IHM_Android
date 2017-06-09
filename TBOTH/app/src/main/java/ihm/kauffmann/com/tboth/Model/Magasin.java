@@ -1,6 +1,6 @@
 package ihm.kauffmann.com.tboth.Model;
 
-import android.util.SparseArray;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -15,18 +15,18 @@ public class Magasin {
     public static List<Magasin> getData() {
         if (data == null) {
             data = new LinkedList<>();
-            data.add(new Magasin(0, "ToBeOrToHave\nAntibes", R.drawable.m_f0, "+33 6 58 89 18 58", "24 rue Lorem Ipsum 06000 Antibes",
-                    "contact@tboth-antibes.fr", new HashMap<Integer, Produit>()));
-            data.add(new Magasin(1, "ToBeOrToHave\nCAP3000", R.drawable.m_f1, "+33 6 58 89 18 58", "24 rue Lorem Ipsum 06000 Saint Laurent du Var",
-                    "contact@tboth-stlaurent.fr", new HashMap<Integer, Produit>()));
-            data.add(new Magasin(2, "ToBeOrToHave\nNice", R.drawable.m_f2, "+33 6 58 89 18 58", "24 rue Lorem Ipsum 06000 Nice",
-                    "contact@tboth-nice.fr", new HashMap<Integer, Produit>()));
-            data.add(new Magasin(3, "ToBeOrToHave\nCannes", R.drawable.m_f3, "+33 6 58 89 18 58", "24 rue Lorem Ipsum 06000 Cannes",
-                    "contact@tboth-cannes.fr", new HashMap<Integer, Produit>()));
-            data.add(new Magasin(4, "ToBeOrToHave\nParis", R.drawable.m_f4, "+33 6 58 89 18 58", "24 rue Lorem Ipsum 75000 Paris",
-                    "contact@tboth-paris.fr", new HashMap<Integer, Produit>()));
-            data.add(new Magasin(5, "ToBeOrToHave\nLyon", R.drawable.m_f5, "+33 6 58 89 18 58", "24 rue Lorem Ipsum 69000 Lyon",
-                    "contact@tboth-lyon.fr", new HashMap<Integer, Produit>()));
+            data.add(new Magasin(0, "ToBeOrToHave\nSophia-Antipolis", R.drawable.m_f0, "+33676128870", "24 rue Lorem Ipsum 06000 Sophia-Antipolis",
+                    "contact@tboth-antibes.fr", 43.615735, 7.071853));
+            data.add(new Magasin(1, "ToBeOrToHave\nCap 3000", R.drawable.m_f1, "+33676128870", "24 rue Lorem Ipsum 06000 Saint Laurent du Var",
+                    "contact@tboth-stlaurent.fr", 43.659214, 7.197474));
+            data.add(new Magasin(2, "ToBeOrToHave\nNice", R.drawable.m_f2, "+33676128870", "24 rue Lorem Ipsum 06000 Nice",
+                    "contact@tboth-nice.fr", 43.7010818, 7.2668979));
+            data.add(new Magasin(3, "ToBeOrToHave\nCagnes-sur-Mer", R.drawable.m_f3, "+33676128870", "24 rue Lorem Ipsum 06000 Cagnes-sur-Mer",
+                    "contact@tboth-cannes.fr", 43.665287, 7.127654));
+            data.add(new Magasin(4, "ToBeOrToHave\nParis", R.drawable.m_f4, "+33676128870", "24 rue Lorem Ipsum 75000 Paris",
+                    "contact@tboth-paris.fr", 48.8416192, 2.3066351));
+            data.add(new Magasin(5, "ToBeOrToHave\nLyon", R.drawable.m_f5, "+33676128870", "24 rue Lorem Ipsum 69000 Lyon",
+                    "contact@tboth-lyon.fr", 45.761803, 4.855695));
         }
         return data;
     }
@@ -37,20 +37,17 @@ public class Magasin {
     private String phoneNumber;
     private String address;
     private String email;
-    //private HashMap<Integer, Produit> promotions;
-
-    private boolean Favorite = false;
-
+    private LatLng position;
 
     public Magasin(int id, String name, int imagePath, String phoneNumber, String address,
-                   String email, HashMap<Integer, Produit> promotions) {
+                   String email, double lat, double lng) {
         this.id = id;
         this.name = name;
         this.imagePath = imagePath;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.email = email;
-        //this.promotions = promotions;
+        this.position = new LatLng(lat, lng);
     }
 
     public static HashMap<Produit, HashMap<Integer, Magasin>> getPromotionData() {
@@ -95,7 +92,7 @@ public class Magasin {
         return email;
     }
 
-    public void setFavorite(boolean favorite) {
-        Favorite = favorite;
+    public LatLng getPosition() {
+        return position;
     }
 }

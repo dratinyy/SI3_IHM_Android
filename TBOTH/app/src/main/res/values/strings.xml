@@ -7,5 +7,7 @@
     <string name="logo">Logo</string>
     <string name="choisir_des_magasins">Choisir des magasins</string>
     <string name="produit">Produit</string>
+    <string name="title_activity_maps">Map</string>
     <string name="type_de_produit">Type de produit</string>
+    <string name="telephone">Téléphone</string>
 </resources>

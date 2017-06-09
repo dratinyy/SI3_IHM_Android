@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openPromotions() {
-        Intent intent = new Intent(this, ChoixMagasinActivity.class);
+        Intent intent = new Intent(this, ChoixProduitActivity.class);
         startActivity(intent);
     }
 
